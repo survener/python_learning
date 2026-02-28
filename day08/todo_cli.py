@@ -1,19 +1,19 @@
-def add_task(tasks, title):
-    tasks.append({"title": title, "done": False})
+def add_task(task_list, task_title):
+    task_list.append({"title": task_title, "done": False})
 
 
-def list_tasks(tasks):
+def list_tasks(task_list):
     lines = []
-    for i, t in enumerate(tasks, start=1):
-        mark = "x" if t["done"] else " "
-        lines.append(f"{i}. [{mark}] {t['title']}")
+    for i, task in enumerate(task_list, start=1):
+        mark = "x" if task["done"] else " "
+        lines.append(f"{i}. [{mark}] {task['title']}")
     return lines
 
 
-def finish_task(tasks, index):
-    if index < 1 or index > len(tasks):
+def finish_task(task_list, index):
+    if index < 1 or index > len(task_list):
         return False
-    tasks[index - 1]["done"] = True
+    task_list[index - 1]["done"] = True
     return True
 
 
