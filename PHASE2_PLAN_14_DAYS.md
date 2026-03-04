@@ -15,7 +15,7 @@
 ## Week 1 (Days 11–17): Code Quality + Design
 
 **1. Day 11: Project structure**
-- Topics: package layout, imports, __init__.py
+- Topics: package layout, imports, `__init__.py`  
 - Task: refactor one day folder into package style
 - Git: feature branch + merge commit message quality
 
