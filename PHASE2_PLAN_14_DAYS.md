@@ -71,6 +71,7 @@
 - Final test run
 - Git history check
 - Release tag: v0.1.0
+---
 
 
 # 英语注释
@@ -113,12 +114,12 @@
   git add bug_fix.py style_fix.py
   git commit -m "fix bug and format code"
 
- ✅ 正确示范：分开提交
-git add bug_fix.py
-git commit -m "fix off-by-one bug in index calculation"
+  ✅ 正确示范：分开提交
+  git add bug_fix.py
+  git commit -m "fix off-by-one bug in index calculation"
 
-git add style_fix.py
-git commit -m "format bug_fix.py according to PEP8" 
+  git add style_fix.py
+  git commit -m "format bug_fix.py according to PEP8" 
 ```
 
 **custom exceptions**
@@ -147,14 +148,16 @@ git commit -m "format bug_fix.py according to PEP8"
 
 **branch naming convention**
  - 分支命名规范
-|    类型   |     前缀      |    用途     |          示例                | <br>
-| -------- | ------------- | ---------- | --------------------------- | <br>
-| 功能分支  | `feature/`    | 开发新功能   | `feature/day15-oop`         | <br>
-| 修复分支  | `fix/`        | 修复 bug    | `fix/login-bug`             | <br>
-| 改进/优化 | `improve/`    | 重构或性能优化| `improve/data-persistence` | <br>
-| 热修复    | `hotfix/`     | 紧急线上修复 | `hotfix/crash-on-startup`   | <br>
-| 发布分支  | `release/`    | 准备版本发布 | `release/v1.2.0`            | <br>
-| 实验/临时 | `experiment/` | 临时尝试     | `experiment/new-ui`         | <br>
+```
+|    类型   |     前缀      |    用途     |          示例                | 
+| -------- | ------------- | ---------- | --------------------------- | 
+| 功能分支  | `feature/`    | 开发新功能   | `feature/day15-oop`         | 
+| 修复分支  | `fix/`        | 修复 bug    | `fix/login-bug`             | 
+| 改进/优化 | `improve/`    | 重构或性能优化| `improve/data-persistence` | 
+| 热修复    | `hotfix/`     | 紧急线上修复 | `hotfix/crash-on-startup`   | 
+| 发布分支  | `release/`    | 准备版本发布 | `release/v1.2.0`            | 
+| 实验/临时 | `experiment/` | 临时尝试     | `experiment/new-ui`         | 
+```
 
 **Testing depth**
  - 测试深度
