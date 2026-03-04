@@ -143,8 +143,8 @@ git commit -m "format bug_fix.py according to PEP8" ```
 
 **branch naming convention**
  - 分支命名规范
- - | 类型    | 前缀            | 用途      | 示例                         |
-| ----- | ------------- | ------- | -------------------------- |
+ - | 类型 | 前缀 | 用途 | 示例 |
+| ------ | ------ | ------ | ------ |
 | 功能分支  | `feature/`    | 开发新功能   | `feature/day15-oop`        |
 | 修复分支  | `fix/`        | 修复 bug  | `fix/login-bug`            |
 | 改进/优化 | `improve/`    | 重构或性能优化 | `improve/data-persistence` |
