@@ -2,14 +2,14 @@
 
 **Goal**
 
--Write cleaner, modular Python code
--Improve test quality
--Use real Git team workflow (branch → PR-style review → merge)
+- Write cleaner, modular Python code
+- Improve test quality
+- Use real Git team workflow (branch → PR-style review → merge)
 
 **Daily Structure (2–3 hours)**
-1.40 min learning
-2.60–90 min coding
-3.20–30 min Git workflow
+ 1.40 min learning
+ 2.60–90 min coding
+ 3.20–30 min Git workflow
 
 ---
 ## Week 1 (Days 11–17): Code Quality + Design
