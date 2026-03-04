@@ -101,21 +101,25 @@
  - 包式结构（Python package layout）
 
 **Type hints**
- - 类型提示；在 Python 中标注变量、函数参数和返回值的预期类型。
- - ```def greet(name: str) -> str:
-    return f"Hello, {name}!"```
+ - 类型提示；在 Python 中标注变量、函数参数和返回值的预期类型。<br>
+``` def greet(name: str) -> str:
+    return f"Hello, {name}!"
+   ```
+
 **small atomic commits**
  - 小而原子化的提交
- - ``` # ❌ 错误示范：修 bug 顺便改代码格式
-git add bug_fix.py style_fix.py
-git commit -m "fix bug and format code"
+```  
+  ❌ 错误示范：修 bug 顺便改代码格式
+  git add bug_fix.py style_fix.py
+  git commit -m "fix bug and format code"
 
-# ✅ 正确示范：分开提交
+ ✅ 正确示范：分开提交
 git add bug_fix.py
 git commit -m "fix off-by-one bug in index calculation"
 
 git add style_fix.py
-git commit -m "format bug_fix.py according to PEP8" ```
+git commit -m "format bug_fix.py according to PEP8" 
+```
 
 **custom exceptions**
  - 自定义异常
