@@ -1,4 +1,11 @@
-from todo_store import load_tasks, save_tasks, add_task, finish_task
+import pytest
+from todo_store import (
+    load_tasks,
+    save_tasks,
+    add_task,
+    finish_task,
+    InvalidTodoDataError,
+)
 
 
 def test_load_missing_file(tmp_path):
@@ -18,8 +25,24 @@ def test_save_and_load(tmp_path):
     assert loaded[0]["title"] == "learn git"
 
 
-def test_finish_task(tmp_path):
+def test_finish_task():
     tasks = [{"title": "a", "done": False}]
     ok = finish_task(tasks, 1)
     assert ok is True
     assert tasks[0]["done"] is True
+
+
+def test_invalid_json_raises_custom_error(tmp_path):
+    p = tmp_path / "todo.json"
+    p.write_text("{bad json", encoding="utf-8")
+
+    with pytest.raises(InvalidTodoDataError):
+        load_tasks(str(p))
+
+
+def test_non_list_json_raises_custom_error(tmp_path):
+    p = tmp_path / "todo.json"
+    p.write_text('{"title": "not-a-list"}', encoding="utf-8")
+
+    with pytest.raises(InvalidTodoDataError):
+        load_tasks(str(p))
