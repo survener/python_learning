@@ -36,12 +36,13 @@ Build a clean Python package structure and understand why modular layout improve
 **maintainability**
 - /meɪnˌteɪnəˈbɪləti/
 - 可维护性
-`
+```
 代码容易修改
 代码容易理解
 代码容易扩展
 bug容易定位
-`
+```
+
 **Separation of Concerns**
 - 关注点分离
 - 软件工程一个非常重要的原则
