@@ -1,16 +1,16 @@
-def add_task(task_list, task_title):
+def add_task(task_list: list[dict[str, object]], task_title: str) -> None:
     task_list.append({"title": task_title, "done": False})
 
 
-def list_tasks(task_list):
-    lines = []
+def list_tasks(task_list: list[dict[str, object]]) -> list[str]:
+    lines: list[str] = []
     for i, task in enumerate(task_list, start=1):
         mark = "x" if task["done"] else " "
         lines.append(f"{i}. [{mark}] {task['title']}")
     return lines
 
 
-def finish_task(task_list, index):
+def finish_task(task_list: list[dict[str, object]], index: int) -> bool:
     if index < 1 or index > len(task_list):
         return False
     task_list[index - 1]["done"] = True
@@ -18,7 +18,7 @@ def finish_task(task_list, index):
 
 
 if __name__ == "__main__":
-    tasks = []
+    tasks: list[dict[str, object]] = []
     while True:
         cmd = input("命令(add/list/done/exit): ").strip().lower()
 

@@ -2,7 +2,10 @@ import json
 from pathlib import Path
 
 
-def load_tasks(file_path: str):
+Task = dict[str, object]
+
+
+def load_tasks(file_path: str) -> list[Task]:
     p = Path(file_path)
     if not p.exists():
         return []
@@ -12,16 +15,16 @@ def load_tasks(file_path: str):
     return json.loads(text)
 
 
-def save_tasks(file_path: str, tasks):
+def save_tasks(file_path: str, tasks: list[Task]) -> None:
     p = Path(file_path)
     p.write_text(json.dumps(tasks, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
-def add_task(tasks, title: str):
+def add_task(tasks: list[Task], title: str) -> None:
     tasks.append({"title": title, "done": False})
 
 
-def finish_task(tasks, index: int):
+def finish_task(tasks: list[Task], index: int) -> bool:
     if index < 1 or index > len(tasks):
         return False
     tasks[index - 1]["done"] = True
