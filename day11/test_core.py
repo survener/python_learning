@@ -11,3 +11,13 @@ def test_word_count_normal():
 
 def test_word_count_empty():
     assert word_count("   ") == 0
+
+
+#new addition apart
+
+def test_normalize_text_empty():
+    assert normalize_text("   ") == ""
+
+
+def test_word_count_trimmed_spaces():
+    assert word_count("  alpha   beta  ") == 2

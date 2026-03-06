@@ -46,3 +46,17 @@ def test_non_list_json_raises_custom_error(tmp_path):
 
     with pytest.raises(InvalidTodoDataError):
         load_tasks(str(p))
+
+
+#new addition apart:
+
+def test_load_empty_file(tmp_path):
+    p = tmp_path / "todo.json"
+    p.write_text("", encoding="utf-8")
+    assert load_tasks(str(p)) == []
+
+
+def test_finish_task_invalid_index():
+    tasks = [{"title": "a", "done": False}]
+    assert finish_task(tasks, 0) is False
+    assert finish_task(tasks, 2) is False

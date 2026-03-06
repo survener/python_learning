@@ -19,3 +19,16 @@ def test_finish_task_invalid():
     tasks = []
     add_task(tasks, "task1")
     assert finish_task(tasks, 2) is False
+
+
+#new additions apart:
+
+def test_list_tasks_empty():
+    tasks = []
+    assert list_tasks(tasks) == []
+
+
+def test_finish_task_zero_index():
+    tasks = []
+    add_task(tasks, "task1")
+    assert finish_task(tasks, 0) is False
