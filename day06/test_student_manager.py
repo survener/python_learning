@@ -1,10 +1,10 @@
-from student_manager import StudentManager
+from student_manager import Student, StudentManager
 
 
 def test_add_and_find_student():
     sm = StudentManager()
     sm.add_student("Alice", 20)
-    assert sm.find_student("Alice") == {"name": "Alice", "age": 20}
+    assert sm.find_student("Alice") == Student(name="Alice", age=20)
 
 
 def test_find_missing_student():
