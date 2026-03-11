@@ -54,3 +54,23 @@ def test_search_tasks():
     add_task(tasks, "cook dinner")
     rows = search_tasks(tasks, "learn")
     assert len(rows) == 2
+
+
+def test_delete_task_invalid_index():
+    tasks = []
+    add_task(tasks, "task1")
+    assert delete_task(tasks, 0) is False
+    assert delete_task(tasks, 2) is False
+
+
+def test_edit_task_invalid_index():
+    tasks = []
+    add_task(tasks, "task1")
+    assert edit_task(tasks, 0, "x") is False
+    assert edit_task(tasks, 2, "x") is False
+
+
+def test_search_tasks_empty_keyword():
+    tasks = []
+    add_task(tasks, "learn python")
+    assert search_tasks(tasks, "") == []
