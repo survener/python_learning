@@ -60,3 +60,5 @@ def test_finish_task_invalid_index():
     tasks = [{"title": "a", "done": False}]
     assert finish_task(tasks, 0) is False
     assert finish_task(tasks, 2) is False
+
+

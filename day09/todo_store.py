@@ -45,8 +45,15 @@ def load_tasks(file_path: str) -> list[Task]:
 
 def save_tasks(file_path: str, tasks: list[Task]) -> None:
     p = Path(file_path)
+
+    # Create backup if file exists
+    if p.exists():
+        backup = p.with_suffix(p.suffix + ".bak")
+        backup.write_text(p.read_text(encoding="utf-8"), encoding="utf-8")
+
     p.write_text(json.dumps(tasks, ensure_ascii=False, indent=2), encoding="utf-8")
     logger.info("Saved %d tasks to %s", len(tasks), file_path)
+
 
 
 def add_task(tasks: list[Task], title: str) -> None:
